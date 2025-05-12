@@ -9,9 +9,18 @@ int linearSearch(int arr[], int size, int target) {
 }
 
 int main() {
-    int arr[] = {5, 2, 9, 1, 7};
-    int target = 9;
-    int result = linearSearch(arr, 5, target);
+    int size, target;
+    cout << "Enter array size: ";
+    cin >> size;
+
+    int arr[size];
+    cout << "Enter array elements: ";
+    for(int i = 0; i < size; i++) cin >> arr[i];
+
+    cout << "Enter target to search: ";
+    cin >> target;
+
+    int result = linearSearch(arr, size, target);
     if(result != -1)
         cout << "Found at index: " << result << endl;
     else

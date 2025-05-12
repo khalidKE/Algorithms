@@ -11,11 +11,11 @@ int getMax(int arr[], int size) {
 void countingSort(int arr[], int size, int exp) {
     int output[size], count[10] = {0};
 
-    for(int i = 0; i < size; i++) count[(arr[i] / exp) % 10]++;
+    for(int i = 0; i < size; i++) count[(arr[i]/exp)%10]++;
     for(int i = 1; i < 10; i++) count[i] += count[i-1];
     for(int i = size - 1; i >= 0; i--) {
-        output[count[(arr[i] / exp) % 10] - 1] = arr[i];
-        count[(arr[i] / exp) % 10]--;
+        output[count[(arr[i]/exp)%10] - 1] = arr[i];
+        count[(arr[i]/exp)%10]--;
     }
     for(int i = 0; i < size; i++) arr[i] = output[i];
 }
@@ -27,10 +27,19 @@ void radixSort(int arr[], int size) {
 }
 
 int main() {
-    int arr[] = {170, 45, 75, 90, 802, 24, 2, 66};
-    int size = 8;
+    int size;
+    cout << "Enter array size: ";
+    cin >> size;
+
+    int arr[size];
+    cout << "Enter non-negative array elements: ";
+    for(int i = 0; i < size; i++) cin >> arr[i];
+
     radixSort(arr, size);
+
+    cout << "Sorted array: ";
     for(int i = 0; i < size; i++) cout << arr[i] << " ";
+    cout << endl;
 }
 
 // Description:

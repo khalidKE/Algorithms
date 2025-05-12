@@ -14,9 +14,18 @@ int binarySearch(int arr[], int size, int target) {
 }
 
 int main() {
-    int arr[] = {1, 2, 5, 7, 9};
-    int target = 5;
-    int result = binarySearch(arr, 5, target);
+    int size, target;
+    cout << "Enter array size: ";
+    cin >> size;
+
+    int arr[size];
+    cout << "Enter sorted array elements: ";
+    for(int i = 0; i < size; i++) cin >> arr[i];
+
+    cout << "Enter target to search: ";
+    cin >> target;
+
+    int result = binarySearch(arr, size, target);
     if(result != -1)
         cout << "Found at index: " << result << endl;
     else
